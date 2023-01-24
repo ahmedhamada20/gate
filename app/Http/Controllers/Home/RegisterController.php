@@ -32,39 +32,39 @@ class RegisterController extends Controller
         //
     }
 
-    public function pagesRegister(Request $request)
-    {
-
-        $eubacterialClients = DB::table('clients')->where('page_id',$request->page_id)->where('phone', $request->phone)->first();
-
-        if ($eubacterialClients){
-            $updateClient = Client::findorfail($eubacterialClients->id);
-            $updateClient->update([
-                'duplicate' => $eubacterialClients->duplicate + 1,
-            ]);
-            alert()->success('عمليه ناجحه', 'هل تم تسجيل البيانات من قبل وسيتم التواصل خلال الساعات القادمه');
-            return redirect()->back();
-        }else{
-            Client::create([
-                'name' => $request->name ?? null,
-                'email' => $request->email ?? null,
-                'phone' => $request->phone ?? null,
-                'code' => $request->code ?? null,
-                'sloppy' => $request->sloppy ?? null,
-                'jops' => $request->jops ?? null,
-                'type' => $request->type ?? null,
-                'data' => date('Y-m-d'),
-                'time' => date('H'),
-                'duplicate' => $request->duplicate ?? null,
-                'page_id' => $request->page_id,
-            ]);
-
-            alert()->success('عمليه ناجحه', 'تم تسجيل بيانات بنجاح');
-            return redirect()->back();
-        }
-
-
-    }
+//    public function pagesRegister(Request $request)
+//    {
+//
+//        $eubacterialClients = DB::table('clients')->where('page_id',$request->page_id)->where('phone', $request->phone)->first();
+//
+//        if ($eubacterialClients){
+//            $updateClient = Client::findorfail($eubacterialClients->id);
+//            $updateClient->update([
+//                'duplicate' => $eubacterialClients->duplicate + 1,
+//            ]);
+//            alert()->success('عمليه ناجحه', 'هل تم تسجيل البيانات من قبل وسيتم التواصل خلال الساعات القادمه');
+//            return redirect()->back();
+//        }else{
+//            Client::create([
+//                'name' => $request->name ?? null,
+//                'email' => $request->email ?? null,
+//                'phone' => $request->phone ?? null,
+//                'code' => $request->code ?? null,
+//                'sloppy' => $request->sloppy ?? null,
+//                'jops' => $request->jops ?? null,
+//                'type' => $request->type ?? null,
+//                'data' => date('Y-m-d'),
+//                'time' => date('H'),
+//                'duplicate' => $request->duplicate ?? null,
+//                'page_id' => $request->page_id,
+//            ]);
+//
+//            alert()->success('عمليه ناجحه', 'تم تسجيل بيانات بنجاح');
+//            return redirect()->back();
+//        }
+//
+//
+//    }
 
 
     public function store(Request $request)
@@ -73,25 +73,34 @@ class RegisterController extends Controller
 
         if ($eubacterial) {
 
-            $update = Customer::findorfail($eubacterial->id);
-            $update->update([
+
+            DB::table('customers')->where('id', $eubacterial->id)->update([
                 'duplicate' => $eubacterial->duplicate + 1,
+                'data' => date('Y-m-d'),
+                'pagesTypes' => ($eubacterial->pagesTypes . '  ' . $request->pagesTypes),
+                'name' => $request->name ?? null,
+                'email' => $request->email ?? null,
+                'phone' => $request->phone ?? null,
+                'code' => $request->code ?? null,
+                'sloppy' => $request->sloppy ?? null,
+                'jops' => $request->jops ?? null,
+                'type' => $request->type ?? null,
             ]);
 
-            alert()->success('عمليه ناجحه', 'هل تم تسجيل البيانات من قبل وسيتم التواصل خلال الساعات القادمه');
+
+            alert()->success('عمليه ناجحه', 'تم تسجيل بيانات بنجاح');
             return redirect()->back();
         } else {
             Customer::create([
                 'name' => $request->name ?? null,
                 'email' => $request->email ?? null,
                 'phone' => $request->phone ?? null,
-                'code' => $request->country ?? null,
+                'code' => $request->code ?? null,
                 'sloppy' => $request->sloppy ?? null,
                 'jops' => $request->jops ?? null,
                 'type' => $request->type ?? null,
                 'data' => date('Y-m-d'),
-                'time' => date('H'),
-                'duplicate' => $request->duplicate ?? null,
+                'duplicate' => 0,
             ]);
 
             alert()->success('عمليه ناجحه', 'تم تسجيل بيانات بنجاح');

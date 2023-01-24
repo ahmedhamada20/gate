@@ -53,8 +53,8 @@
                                 <button class="btn btn-success btn-block">Download Ecxel</button>
                             </div>
                         </div>
-                  
-                        
+
+
                     </form>
                     {{-- <a href="{{ route('downloadExel') }}" class="btn btn-success">Download Ecxel</a> --}}
                 </div>
@@ -74,13 +74,15 @@
                                 <th>المؤهل</th>
                                 <th>الوظيفه</th>
                                 <th>الحاله</th>
+                                <th>الصفحه</th>
                                 <th>تاريخ التسجيل</th>
                                 <th>مسجل من قبل</th>
+                                <th>تاريخ اول انشاء</th>
                                 {{-- <th>العمليات</th> --}}
                             </tr>
                         </thead>
                         <tbody>
-                            
+
                         </tbody>
                     </table>
                 </div>
@@ -94,7 +96,7 @@
 @section('js')
 <script type="text/javascript">
     $(function () {
-      
+
       var table = $('.data-table').DataTable({
           processing: true,
           serverSide: true,
@@ -108,12 +110,14 @@
               {data: 'sloppy', name: 'sloppy'},
               {data: 'jops', name: 'jops'},
               {data: 'type', name: 'type'},
+              {data: 'pagesTypes', name: 'pagesTypes'},
               {data: 'data', name: 'data'},
               {data: 'duplicate', name: 'duplicate'},
+              {data: 'created_at', name: 'created_at'},
             //   {data: 'action', name: 'action', orderable: false, searchable: false},
           ]
       });
-      
+
     });
 </script>
 @endsection

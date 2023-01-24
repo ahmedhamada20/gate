@@ -22,13 +22,15 @@ use RealRashid\SweetAlert\Facades\Alert;
 */
 
 require __DIR__.'/auth.php';
-Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
-   
+//Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
+
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/facebook', [HomeController::class, 'facebook'])->name('facebook');
+    Route::get('/twitter', [HomeController::class, 'twitter'])->name('twitter');
+
+    Route::resource('registers',RegisterController::class);
 
 
 
-    Route::view('ahmedhamada', 'pages.namePage.master');
-
-});
+//});

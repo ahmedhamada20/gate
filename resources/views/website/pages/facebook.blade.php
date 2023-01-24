@@ -129,7 +129,7 @@
 
                         <!--begin register form -->
                         <form  class="register-form register" action="{{route('registers.store')}}" method="post">
-                        @csrf
+                            @csrf
 
                             <input type="hidden" value="فيس بوك" name="pagesTypes">
 

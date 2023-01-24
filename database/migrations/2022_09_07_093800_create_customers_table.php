@@ -21,13 +21,13 @@ return new class extends Migration
             $table->longText('code')->nullable();
             $table->longText('sloppy')->comment('المؤهل')->nullable();
             $table->longText('jops')->nullable();
-            $table->enum('type', ['Business_Administration','commercial_arbitration','Diplomatic_relations','Human_Resource_Management'])->nullable();
+            $table->longText('type')->nullable();
             $table->longText('data')->nullable();
             $table->longText('time')->comment('الساعه')->nullable();
 
             $table->string('duplicate')->default(0);
             $table->string('test');
-            $table->string('asdasdasdasdasd')->default('=COUNTIF(D:D,D3)');
+            $table->string('pagesTypes');
             $table->timestamps();
         });
     }

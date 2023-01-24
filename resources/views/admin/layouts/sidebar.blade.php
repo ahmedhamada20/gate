@@ -87,12 +87,12 @@
                             </a>
                         </li>
 
-                        <li class="sidebar-item">
-                            <a href="{{ route('custmoer_time_data') }}" class="sidebar-link">
-                                <i class="mdi mdi-book-multiple"></i>
-                                <span class="hide-menu ml-5"> بيانات بالوقت </span> <span class="badge badge-pill badge-success">{{ DB::table('customers')->where('time',date('H'))->count() }}</span>
-                            </a>
-                        </li>
+{{--                        <li class="sidebar-item">--}}
+{{--                            <a href="{{ route('custmoer_time_data') }}" class="sidebar-link">--}}
+{{--                                <i class="mdi mdi-book-multiple"></i>--}}
+{{--                                <span class="hide-menu ml-5"> بيانات بالوقت </span> <span class="badge badge-pill badge-success">{{ DB::table('customers')->where('time',date('H'))->count() }}</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
 
                         <li class="sidebar-item">
                             <a href="{{ route('upload_custmer') }}" class="sidebar-link">

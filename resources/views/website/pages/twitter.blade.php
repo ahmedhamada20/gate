@@ -129,9 +129,9 @@
 
                         <!--begin register form -->
                         <form  class="register-form register" action="{{route('registers.store')}}" method="post">
-                        @csrf
+                            @csrf
 
-                            <input type="hidden" value="فيس بوك" name="pagesTypes">
+                            <input type="hidden" value="توتير" name="pagesTypes">
 
                             <input class="register-input white-input" required  name="name" placeholder="الاسم*" type="text">
                             <select class="register-input white-input" required="" name="code">

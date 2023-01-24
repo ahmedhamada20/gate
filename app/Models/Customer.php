@@ -20,6 +20,7 @@ class Customer extends Model
         'data',
         'time',
         'duplicate',
+        'pagesTypes',
         'test',
     ];
 

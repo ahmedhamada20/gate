@@ -24,13 +24,16 @@ class CustomerController extends Controller
             $data = Customer::select('*')->orderBy('id', 'DESC');
             return DataTables::of($data)
                 ->addIndexColumn()
+                ->editColumn('created_at',function ($query){
+                    return $query->created_at->format('Y-m-d');
+                })
                 ->addColumn('action', function ($row) {
 
                     $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">View</a>';
 
                     return $btn;
                 })
-                ->rawColumns(['action'])
+                ->rawColumns(['action','createdAt'])
                 ->make(true);
         }
 
