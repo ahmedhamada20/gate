@@ -47,7 +47,7 @@
             <nav class="navbar navbar-expand-lg">
 
                 <!--begin logo -->
-                <a class="navbar-brand" href="{{route('home')}}">IMCT</a>
+                <a class="navbar-brand" href="">IMCT</a>
                 <!--end logo -->
 
                 <!--begin navbar-toggler -->

@@ -53,21 +53,21 @@
                     <i class="mdi mdi-dots-horizontal"></i>
                     <span class="hide-menu">الاعدادات العامه</span>
                 </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                        <i class="icon-Mailbox-Empty"></i>
-                        <span class="hide-menu">جميع الصفحات </span>
-                    </a>
-                    <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item">
-                            <a href="{{ route('pages.index') }}" class="sidebar-link">
-                                <i class="mdi mdi-email"></i>
-                                <span class="hide-menu"> جميع الصفحات </span>
-                            </a>
-                        </li>
+{{--                <li class="sidebar-item">--}}
+{{--                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">--}}
+{{--                        <i class="icon-Mailbox-Empty"></i>--}}
+{{--                        <span class="hide-menu">جميع الصفحات </span>--}}
+{{--                    </a>--}}
+{{--                    <ul aria-expanded="false" class="collapse  first-level">--}}
+{{--                        <li class="sidebar-item">--}}
+{{--                            <a href="{{ route('pages.index') }}" class="sidebar-link">--}}
+{{--                                <i class="mdi mdi-email"></i>--}}
+{{--                                <span class="hide-menu"> جميع الصفحات </span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
 
-                    </ul>
-                </li>
+{{--                    </ul>--}}
+{{--                </li>--}}
                 <li class="sidebar-item">
                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="icon-Ticket"></i>
