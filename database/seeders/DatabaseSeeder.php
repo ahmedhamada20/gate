@@ -24,8 +24,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(SettingSeeder::class);
         $this->call(AdminLoginSeeder::class);
-        $this->call(SectionOneSeeder::class);
-        $this->call(SectionEightSeeder::class);
+//        $this->call(SectionOneSeeder::class);
+//        $this->call(SectionEightSeeder::class);
 //        $this->call(CustomerSeeder::class);
 //        $this->call(PageSeeder::class);
 //        $this->call(ClientSeeder::class);

@@ -14,16 +14,17 @@ return new class extends Migration {
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->string('name_site');
-            $table->string('title');
+            $table->string('name_site')->nullable();
+            $table->string('title')->nullable();
+            $table->string('type')->nullable();
             $table->string('numberSendSms')->default(0);
             $table->text('notes')->nullable();
             $table->string('phone')->nullable();
             $table->string('facebook')->nullable();
             $table->string('url')->nullable();
-            $table->longText('photo_navbar');
-            $table->longText('photo_cover');
-            $table->longText('photo_site');
+            $table->longText('photo_navbar')->nullable();
+            $table->longText('photo_cover')->nullable();
+            $table->longText('photo_site')->nullable();
             $table->foreignId('page_id')->nullable()->constrained('pages')->cascadeOnDelete();
             $table->timestamps();
         });

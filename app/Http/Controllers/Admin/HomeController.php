@@ -31,11 +31,6 @@ class HomeController extends Controller
             'sectionsOne' => SectionOne::whereNull('page_id')->get(),
             'sectionstwo' => SectionTwo::whereNull('page_id')->get(),
             'sectionsthere' => SectionThere::whereNull('page_id')->get(),
-            'sectionsfours' => SectionFour::whereNull('page_id')->get(),
-            'sectionsfives' => SectionFive::whereNull('page_id')->get(),
-            'sectionssix' => SectionSix::whereNull('page_id')->get(),
-            'sectionsseven' => SectionSeven::whereNull('page_id')->get(),
-            'sectionseights' => SectionEight::whereNull('page_id')->get(),
         ];
 
         return view('admin.setting.index', $data);

@@ -9,7 +9,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
 
-    <title>IMCT</title>
+    <title>{{App\Models\Setting::where('type','form1')->first()->name_site}}</title>
 
     <!-- Loading Bootstrap -->
     <link href="{{asset('website/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -47,44 +47,9 @@
             <nav class="navbar navbar-expand-lg">
 
                 <!--begin logo -->
-                <a class="navbar-brand" href="{{route('home')}}">IMCT</a>
+                <a class="navbar-brand" href="">{{App\Models\Setting::where('type','form1')->first()->name_site}}</a>
                 <!--end logo -->
 
-                <!--begin navbar-toggler -->
-                <!--<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">-->
-                <!--    <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>-->
-                <!--</button>-->
-                <!--end navbar-toggler -->
-
-                <!--begin navbar-collapse -->
-                <!--<div class="navbar-collapse collapse" id="navbarCollapse" style="">-->
-
-                <!--begin navbar-nav -->
-                <!--<ul class="navbar-nav ml-auto">-->
-
-                <!--    <li><a href="#home">Home</a></li>-->
-
-                <!--    <li><a href="#about">About</a></li>-->
-
-                <!--    <li><a href="#features">Features</a></li>-->
-
-                <!--    <li><a href="#team">Team</a></li>-->
-
-                <!--    <li><a href="#showcase">Showcase</a></li>-->
-
-                <!--    <li><a href="#pricing">Pricing</a></li>-->
-
-                <!--    <li><a href="#blog">Blog</a></li>-->
-
-                <!--    <li><a href="#contact">Contact</a></li>-->
-
-                <!--    <li class="discover-link"><a href="#" class="external discover-btn">Get Started</a></li>-->
-
-                <!--</ul>-->
-                <!--end navbar-nav -->
-
-                <!--</div>-->
-                <!--end navbar-collapse -->
 
             </nav>
             <!--end navbar -->
@@ -110,12 +75,12 @@
             <!--begin col-md-5-->
             <div class="col-md-5 padding-top-20">
 
-                <h1>انضم إلى أكثر من 1000 خبير في مجال التحكيم الدولى</h1>
 
-                <p>توفر الهيئة الدولية للتحكيم دبلومة وماجستير ودكتوراة فى التحكيم التجارى الدولى.
-                    معتمد من الهيئة وبأعتماد من كبرى الجامعات البريطانية،
-                    أنضم الينا لتصبح خبير ومستشار فى فض كافة النزاعات المالية و التجارية
-                    التي تنشأ بين المؤسسات المالية أو التجارية وعملائها.</p>
+                <p>
+                    {{App\Models\Setting::where('type','form1')->first()->notes ?? null}}
+
+
+                </p>
 
                 <!--begin register-form-wrapper-->
                 <div class="register-form-wrapper wow bounceIn" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: bounceIn;">
@@ -131,7 +96,7 @@
                         <form  class="register-form register" action="{{route('registers.store')}}" method="post">
                             @csrf
 
-                            <input type="hidden" value="فيس بوك" name="pagesTypes">
+                            <input type="hidden" value="form1" name="pagesTypes">
 
                             <input class="register-input white-input" required  name="name" placeholder="الاسم*" type="text">
                             <select class="register-input white-input" required="" name="code">

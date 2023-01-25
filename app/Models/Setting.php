@@ -9,9 +9,6 @@ use Spatie\Translatable\HasTranslations;
 class Setting extends Model
 {
     use HasFactory;
-    use HasTranslations;
-
-    public $translatable = ['name_site','title'];
 
     protected $fillable = [
         'name_site',
@@ -25,6 +22,7 @@ class Setting extends Model
         'photo_site',
         'page_id',
         'numberSendSms',
+        'type',
     ];
 
     protected $appends = ['image'];

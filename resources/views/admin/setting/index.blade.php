@@ -48,9 +48,7 @@
                                     class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">الاعدادات الرئسيه</span></a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#profile2" role="tab"><span
-                                    class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">الشريط</span></a>
-                        </li>
+
 
                         <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#profile" role="tab"><span
                                     class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">القسم الاول</span></a>
@@ -60,32 +58,12 @@
                         </li>
                         <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#messages2" role="tab"><span
                                     class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">القسم الثالث</span></a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#messages3" role="tab"><span
-                                    class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">القسم الرابع</span></a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#messages4" role="tab"><span
-                                    class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">القسم الخامس</span></a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#messages5" role="tab"><span
-                                    class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">القسم السادس</span></a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#messages6" role="tab"><span
-                                    class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">القسم السابع</span></a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#messages7" role="tab"><span
-                                    class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">القسم الثامن</span></a>
-                        </li>
-                       
+
                     </ul>
                     <!-- Tab panes -->
                     <div class="tab-content tabcontent-border">
                         <div class="tab-pane active" id="home" role="tabpanel">
                             @include('admin.setting.settingSite')
-                        </div>
-
-                        <div class="tab-pane  p-20" id="profile2" role="tabpanel">
-                            @include('admin.setting.navbar')
                         </div>
 
                         <div class="tab-pane  p-20" id="profile" role="tabpanel">
@@ -100,27 +78,9 @@
                             @include('admin.setting.section3')
                         </div>
 
-                        <div class="tab-pane p-20" id="messages3" role="tabpanel">
-                            @include('admin.setting.section4')
-                        </div>
 
-                        <div class="tab-pane p-20" id="messages4" role="tabpanel">
-                            @include('admin.setting.section5')
-                        </div>
 
-                        <div class="tab-pane p-20" id="messages5" role="tabpanel">
-                            @include('admin.setting.section6')
-                        </div>
 
-                        <div class="tab-pane p-20" id="messages6" role="tabpanel">
-                            @include('admin.setting.section7')
-                        </div>
-
-                        <div class="tab-pane p-20" id="messages7" role="tabpanel">
-                            @include('admin.setting.section8')
-                        </div>
-
-                        
                     </div>
 
                 </div>

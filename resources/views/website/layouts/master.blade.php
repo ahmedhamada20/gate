@@ -47,7 +47,7 @@
             <nav class="navbar navbar-expand-lg">
 
                 <!--begin logo -->
-                <a class="navbar-brand" href="">IMCT</a>
+                <a class="navbar-brand" href=""></a>
                 <!--end logo -->
 
                 <!--begin navbar-toggler -->

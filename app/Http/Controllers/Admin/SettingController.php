@@ -74,83 +74,30 @@ class SettingController extends Controller
     public function update(Request $request, $id)
     {
 
-        // dd($request->all());
+
         $pageId = Setting::findorfail($request->id);
 
-
-        if ($pageId->page_id != null) {
-            if ($request->file('photo_navbar')) {
-                $file = $request->file('photo_navbar');
-                $filename = date('YmdHi') . $file->getClientOriginalName();
-                $file->move(public_path('admin/assets/setting'), $filename);
-            }
-
-
-            Setting::updateOrCreate([
-                'id' => $request->id,
-            ], [
-                'name_site' => $request->name_site,
-                'notes' => $request->notes,
-                'phone' => $request->phone,
-                'facebook' => $request->facebook,
-                'url' => $request->url,
-                'photo_navbar' => $filename,
-            ]);
-        } else {
-            if ($request->file('photo_navbar')) {
-                $file = $request->file('photo_navbar');
-                $filenamePage = date('YmdHi') . $file->getClientOriginalName();
-                $file->move(public_path('admin/assets/setting'), $filenamePage);
-            }
-
-            if ($request->file('photo_cover')) {
-                $file = $request->file('photo_cover');
-                $filenamephotoCover = date('YmdHi') . $file->getClientOriginalName();
-                $file->move(public_path('admin/assets/setting'), $filenamephotoCover);
-            }
-            if ($request->file('photo_site')) {
-                $file = $request->file('photo_site');
-                $filenamephotoSite = date('YmdHi') . $file->getClientOriginalName();
-                $file->move(public_path('admin/assets/setting'), $filenamephotoSite);
-            }
-
-
-            Setting::updateOrCreate([
-                'id' => $request->id,
-            ], [
-                'name_site' =>['ar' =>  $request->name_site,'en' =>  $request->name_site_en],
-                'notes' => $request->notes,
-                'numberSendSms' => $request->numberSendSms,
-                'phone' => $request->phone,
-                'facebook' => $request->facebook,
-                'title' => ['ar'=> $request->title , 'en'=>$request->title_en],
-                'url' => $request->url,
-                'photo_navbar' => $filenamePage ?? $pageId->photo_navbar,
-                'photo_cover' => $filenamephotoCover ?? $pageId->photo_cover,
-                'photo_site' => $filenamephotoSite ?? $pageId->photo_site,
-            ]);
-
-
-
-            Seo::updateOrCreate([
-                'seotable_type' => 'App\Models\Setting',
-                'seotable_id' => $request->id,
-
-            ], [
-                'notes' => $request->seo,
-                'seotable_type' => 'App\Models\Setting',
-                'seotable_id' => $request->id,
-            ]);
-
-
-            if ($request->numberSendSms < 0){
-                Artisan::command('send:EmailNewSms');
-            }
-
-
-            return redirect()->back()->withMessage('تم التعديل  بنجاح', 'my msg');
+        if ($request->file('photo_site')) {
+            $file = $request->file('photo_site');
+            $filenamephotoSite = date('YmdHi') . $file->getClientOriginalName();
+            $file->move(public_path('admin/assets/setting'), $filenamephotoSite);
         }
+
+        $pageId->update([
+            'name_site' =>  $request->name_site,
+            'notes' => $request->notes,
+            'numberSendSms' => $request->numberSendSms,
+            'phone' => $request->phone,
+            'facebook' => $request->facebook,
+            'title' =>  $request->title,
+            'url' => $request->url,
+            'type' => $request->formTypePages,
+            'photo_site' => $filenamephotoSite ?? $pageId->photo_site,
+        ]);
+
+        return redirect()->back()->withMessage('تم التعديل  بنجاح', 'my msg');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -158,7 +105,7 @@ class SettingController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public  function destroy($id)
     {
         //
     }

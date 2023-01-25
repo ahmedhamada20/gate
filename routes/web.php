@@ -26,8 +26,9 @@ require __DIR__.'/auth.php';
 
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
-    Route::get('/facebook', [HomeController::class, 'facebook'])->name('facebook');
-    Route::get('/twitter', [HomeController::class, 'twitter'])->name('twitter');
+    Route::get('/form1', [HomeController::class, 'form1'])->name('form1');
+    Route::get('/form2', [HomeController::class, 'form2'])->name('form2');
+
 
     Route::resource('registers',RegisterController::class);
 

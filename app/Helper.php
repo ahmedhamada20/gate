@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Session;
 if (!function_exists('getSettingMasterHome')) {
     function getSettingMasterHome()
     {
+
         $setting = Setting::whereNull('page_id')->first();
         return $setting;
     }

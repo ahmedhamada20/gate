@@ -14,13 +14,13 @@ class HomeController extends Controller
 
     }
 
-    public function facebook()
+    public function form1()
     {
-        return view('website.pages.facebook');
+        return view('website.pages.form1');
     }
 
-    public function twitter()
+    public function form2()
     {
-        return view('website.pages.twitter');
+        return view('website.pages.form2');
     }
 }

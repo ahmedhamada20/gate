@@ -69,11 +69,6 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::resource('navbar', NavbarController::class);
     Route::resource('section1', Section1Controller::class);
     Route::resource('section3', Section3Controller::class);
-    Route::resource('section4', Section4Controller::class);
-    Route::resource('section5', Section5Controller::class);
-    Route::resource('section6', Section6Controller::class);
-    Route::resource('section7', Section7Controller::class);
-    Route::resource('section8', Section8Controller::class);
 
 });
 
