@@ -96,7 +96,8 @@
                         <form  class="register-form register" action="{{route('registers.store')}}" method="post">
                             @csrf
 
-                            <input type="hidden" value="form1" name="pagesTypes">
+                            <input type="hidden" value="fdfgdfgdfgdfgdf" name="pagesTypes">
+                            <input type="hidden" value="fdfgdfgdfgdfgdf" name="pagesTypes">
 
                             <input class="register-input white-input" required  name="name" placeholder="الاسم*" type="text">
                             <select class="register-input white-input" required="" name="code">

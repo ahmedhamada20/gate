@@ -95,7 +95,7 @@ class CustomerController extends Controller
 
     public function downloadExel(Request $request)
     {
-        return Excel::download(new CustomerExport($request->day), 'Customer.xlsx');
+        return Excel::download(new CustomerExport($request->day,$request->type), 'Customer.xlsx');
     }
 
 

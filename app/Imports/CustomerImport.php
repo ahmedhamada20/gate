@@ -35,6 +35,7 @@ class CustomerImport implements ToCollection, WithHeadingRow, WithChunkReading, 
                 ]);
             } else {
                 $newCutomer = new Customer();
+
                 $newCutomer->name = $row['name'] ?? null;
                 $newCutomer->email = $row['email'] ?? null;
                 $newCutomer->phone = $row['phone'] ?? null;
@@ -44,6 +45,7 @@ class CustomerImport implements ToCollection, WithHeadingRow, WithChunkReading, 
                 $newCutomer->type = $row['type'] ?? null;
                 $newCutomer->data = date('Y-m-d');
                 $newCutomer->time = date('H');
+                $newCutomer->TitlePagesTYpe = $row['TitlePagesTYpe'] ?? null;
                 $newCutomer->save();
             }
         }

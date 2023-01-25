@@ -21,6 +21,7 @@ class Customer extends Model
         'time',
         'duplicate',
         'pagesTypes',
+        'TitlePagesTYpe',
         'test',
     ];
 

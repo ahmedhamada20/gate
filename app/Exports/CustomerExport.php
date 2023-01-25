@@ -15,9 +15,10 @@ class CustomerExport implements FromCollection, WithStyles ,WithHeadings
 {
     use Exportable;
 
-    public function __construct($day)
+    public function __construct($day,$type)
     {
         $this->day = $day;
+        $this->type = $type;
     }
 
     public function styles(Worksheet $sheet)
@@ -27,7 +28,7 @@ class CustomerExport implements FromCollection, WithStyles ,WithHeadings
 
     public function collection()
     {
-        return DB::table('customers')->orderByDesc('id')->where('data', $this->day)->get([
+        return DB::table('customers')->orderByDesc('id')->where('data', $this->day)->where('TitlePagesTYpe', $this->type)->get([
 
 
             'name', 'code', 'phone', 'sloppy', 'jops', 'email', 'duplicate', 'data', 'pagesTypes', 'type','created_at',

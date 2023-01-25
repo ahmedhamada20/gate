@@ -49,6 +49,19 @@
                                 <input type="date" class="form-control" required name="day">
                             </div>
 
+
+                            <div class="col">
+                               <select class="form-control" name="type" required>
+                                   <option value="" disabled selected>-- اختر --</option>
+                                   <option value="1">facebook</option>
+                                   <option value="2">site</option>
+                                   <option value="3">form3</option>
+                                   <option value="4">form4</option>
+                                   <option value="5">form5</option>
+                                   <option value="6">form6</option>
+                               </select>
+                            </div>
+
                             <div class="col">
                                 <button class="btn btn-success btn-block">Download Ecxel</button>
                             </div>
