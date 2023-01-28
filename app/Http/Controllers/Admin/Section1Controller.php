@@ -44,6 +44,7 @@ class Section1Controller extends Controller
         $data = $this->data['Models']::create([
             'title' => ['ar' => $request->title ,'en' => $request->title_en],
             'notes' =>['ar'=> $request->notes,'en'=> $request->notes_en],
+            'page_id' => $request->page_id
         ]);
 
         return redirect()->back()->withMessage('تم الحفظ  بنجاح', 'my msg');
@@ -86,6 +87,7 @@ class Section1Controller extends Controller
         $data->update([
             'title' => ['ar' => $request->title ,'en' => $request->title_en],
             'notes' =>['ar'=> $request->notes,'en'=> $request->notes_en],
+
         ]);
 
         return redirect()->back()->withMessage('تم التعديل  بنجاح', 'my msg');

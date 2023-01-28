@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('duplicate')->default(0);
             $table->string('test');
             $table->string('pagesTypes');
-            $table->string('TitlePagesTYpe')->nullable();
+            $table->integer('TitlePagesTYpe');
             $table->timestamps();
         });
     }

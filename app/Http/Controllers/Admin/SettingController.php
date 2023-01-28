@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\SectionOne;
 use App\Models\Seo;
 use App\Models\Setting;
 use Illuminate\Http\Request;
@@ -64,13 +65,15 @@ class SettingController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
+
+    public function getUpdatedSettings($id)
+    {
+        $setting = Setting::where('type',$id)->first();
+        return view('website.types.index',compact('id','setting'));
+
+    }
+
+
     public function update(Request $request, $id)
     {
 
@@ -91,7 +94,8 @@ class SettingController extends Controller
             'facebook' => $request->facebook,
             'title' =>  $request->title,
             'url' => $request->url,
-            'type' => $request->formTypePages,
+            'type' => $request->type,
+            'titleSections2' => $request->titleSections2,
             'photo_site' => $filenamephotoSite ?? $pageId->photo_site,
         ]);
 

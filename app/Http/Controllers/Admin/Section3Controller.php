@@ -40,11 +40,12 @@ class Section3Controller extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
+
 
         $data = $this->data['Models']::create([
             'category' => ['ar' => $request->category, 'en' => $request->category_en],
             'sub_category' => ['ar' => $request->sub_category, 'en' => $request->sub_category_en],
+            'page_id' => $request->page_id
         ]);
 
         return redirect()->back()->withMessage('تم الحفظ  بنجاح', 'my msg');

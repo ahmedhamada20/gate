@@ -31,7 +31,8 @@ class CustomerImport implements ToCollection, WithHeadingRow, WithChunkReading, 
             if ($duplicate) {
                 DB::table('customers')->where('id', $duplicate->id)->update([
                     'duplicate' => $duplicate->duplicate + 1,
-                      'data' => "2023-01-24",
+                    'data' => "2023-01-24",
+                    'pagesTypes'
                 ]);
             } else {
                 $newCutomer = new Customer();
@@ -43,9 +44,10 @@ class CustomerImport implements ToCollection, WithHeadingRow, WithChunkReading, 
                 $newCutomer->sloppy = $row['sloppy'] ?? null;
                 $newCutomer->jops = $row['jops'] ?? null;
                 $newCutomer->type = $row['type'] ?? null;
+                $newCutomer->TitlePagesTYpe = $row['pagestypes'];
                 $newCutomer->data = date('Y-m-d');
                 $newCutomer->time = date('H');
-                $newCutomer->TitlePagesTYpe = $row['TitlePagesTYpe'] ?? null;
+
                 $newCutomer->save();
             }
         }

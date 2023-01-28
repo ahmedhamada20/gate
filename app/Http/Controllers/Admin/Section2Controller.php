@@ -50,6 +50,7 @@ class Section2Controller extends Controller
             'title' => ['ar' => $request->title ,'en' => $request->title_en],
             'notes' =>['ar'=> $request->notes,'en'=> $request->notes_en],
             'cover_photo' => $filenamePage,
+            'page_id' => $request->page_id
         ]);
 
         return redirect()->back()->withMessage('تم الحفظ  بنجاح', 'my msg');
@@ -96,7 +97,7 @@ class Section2Controller extends Controller
         $data->update([
             'title' => ['ar' => $request->title ,'en' => $request->title_en],
             'notes' =>['ar'=> $request->notes,'en'=> $request->notes_en],
-            'cover_photo' => $filenamePage?? $data->cover_photo , 
+            'cover_photo' => $filenamePage?? $data->cover_photo ,
         ]);
 
         return redirect()->back()->withMessage('تم التعديل  بنجاح', 'my msg');

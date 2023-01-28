@@ -23,6 +23,7 @@ class Setting extends Model
         'page_id',
         'numberSendSms',
         'type',
+        'titleSections2',
     ];
 
     protected $appends = ['image'];

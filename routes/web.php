@@ -26,7 +26,14 @@ require __DIR__.'/auth.php';
 
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
-    Route::get('/form1', [HomeController::class, 'form1'])->name('form1');
+
+
+
+
+    Route::get('/ahmedhamada', [HomeController::class, 'form1'])->name('form1');
+
+
+
     Route::get('/form2', [HomeController::class, 'form2'])->name('form2');
 
 

@@ -6,7 +6,7 @@
                     @csrf
                     @method('PUT')
                     <input type="hidden" value="{{$setting->id ?? ''}}" name="id">
-                    <input type="hidden" value="form1" name="formTypePages">
+                    <input type="hidden" name="type" value="{{$id}}">
 
 
                     <div class="row">
@@ -67,6 +67,18 @@
                             <label>وصف الموقع</label>
                             <textarea class="form-control" name="notes" rows="5">
                                 {{old('notes',$setting->notes)}}
+                            </textarea>
+                        </div>
+                    </div>
+
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col">
+                            <label>العنوان الرئيسي في القسم الثاني</label>
+                            <textarea class="form-control" name="titleSections2" rows="5">
+                                {{old('titleSections2',$setting->titleSections2)}}
                             </textarea>
                         </div>
                     </div>

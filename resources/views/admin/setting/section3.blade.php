@@ -18,7 +18,7 @@
                                 <form action="{{route('section3.store')}}" method="post" autocomplete="off"
                                     enctype="multipart/form-data">
                                     @csrf
-
+                                    <input type="hidden" name="page_id" value="{{$id}}">
 
                                     <div class="row">
                                         <div class="col">
@@ -72,7 +72,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($sectionsthere as $row)
+                            @foreach(App\Models\SectionThere::where('page_id',$id)->get() as $row)
                             <tr>
                                 <td>{{$loop->index + 1}}</td>
 

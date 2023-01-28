@@ -70,5 +70,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::resource('section1', Section1Controller::class);
     Route::resource('section3', Section3Controller::class);
 
+    Route::get('updateSetting/{type}',[SettingController::class,'getUpdatedSettings'])->name('getUpdatedSettings');
+
 });
 

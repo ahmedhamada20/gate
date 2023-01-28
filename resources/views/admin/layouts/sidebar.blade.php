@@ -60,11 +60,107 @@
                     </a>
                     <ul aria-expanded="false" class="collapse  first-level">
                         <li class="sidebar-item">
-                            <a href="{{ route('pages.index') }}" class="sidebar-link">
+                            <a href="{{ route('getUpdatedSettings','1') }}" class="sidebar-link">
                                 <i class="mdi mdi-email"></i>
-                                <span class="hide-menu"> جميع الصفحات </span>
+                                <span class="hide-menu"> form1</span>
                             </a>
                         </li>
+
+
+                        <li class="sidebar-item">
+                            <a href="{{ route('getUpdatedSettings','2') }}" class="sidebar-link">
+                                <i class="mdi mdi-email"></i>
+                                <span class="hide-menu"> site</span>
+                            </a>
+                        </li>
+
+
+
+                        <li class="sidebar-item">
+                            <a href="{{ route('getUpdatedSettings','3') }}" class="sidebar-link">
+                                <i class="mdi mdi-email"></i>
+                                <span class="hide-menu"> facebook</span>
+                            </a>
+                        </li>
+
+
+
+                        <li class="sidebar-item">
+                            <a href="{{ route('getUpdatedSettings','4') }}" class="sidebar-link">
+                                <i class="mdi mdi-email"></i>
+                                <span class="hide-menu"> facebook</span>
+                            </a>
+                        </li>
+
+
+                        <li class="sidebar-item">
+                            <a href="{{ route('getUpdatedSettings','5') }}" class="sidebar-link">
+                                <i class="mdi mdi-email"></i>
+                                <span class="hide-menu"> facebook</span>
+                            </a>
+                        </li>
+
+
+
+                        <li class="sidebar-item">
+                            <a href="{{ route('getUpdatedSettings','6') }}" class="sidebar-link">
+                                <i class="mdi mdi-email"></i>
+                                <span class="hide-menu"> facebook</span>
+                            </a>
+                        </li>
+
+
+
+                        <li class="sidebar-item">
+                            <a href="{{ route('getUpdatedSettings','7') }}" class="sidebar-link">
+                                <i class="mdi mdi-email"></i>
+                                <span class="hide-menu"> facebook</span>
+                            </a>
+                        </li>
+
+
+
+                        <li class="sidebar-item">
+                            <a href="{{ route('getUpdatedSettings','8') }}" class="sidebar-link">
+                                <i class="mdi mdi-email"></i>
+                                <span class="hide-menu"> facebook</span>
+                            </a>
+                        </li>
+
+
+
+                        <li class="sidebar-item">
+                            <a href="{{ route('getUpdatedSettings','9') }}" class="sidebar-link">
+                                <i class="mdi mdi-email"></i>
+                                <span class="hide-menu"> facebook</span>
+                            </a>
+                        </li>
+
+
+                        <li class="sidebar-item">
+                            <a href="{{ route('getUpdatedSettings','10') }}" class="sidebar-link">
+                                <i class="mdi mdi-email"></i>
+                                <span class="hide-menu"> facebook</span>
+                            </a>
+                        </li>
+
+
+{{--                        <div class="col">--}}
+{{--                            <select class="form-control" name="type" required>--}}
+{{--                                <option value="" disabled selected>-- اختر --</option>--}}
+{{--                                <option value="1">facebook</option>--}}
+{{--                                <option value="2">site</option>--}}
+{{--                                <option value="3">form3</option>--}}
+{{--                                <option value="4">form4</option>--}}
+{{--                                <option value="5">form5</option>--}}
+{{--                                <option value="6">form6</option>--}}
+{{--                                <option value="7">form7</option>--}}
+{{--                                <option value="8">form8</option>--}}
+{{--                                <option value="9">form9</option>--}}
+{{--                                <option value="10">form10</option>--}}
+
+{{--                            </select>--}}
+{{--                        </div>--}}
 
                     </ul>
                 </li>

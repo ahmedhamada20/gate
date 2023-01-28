@@ -9,7 +9,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
 
-    <title>{{App\Models\Setting::where('type','form1')->first()->name_site}}</title>
+    <title>{{App\Models\Setting::where('type','1')->first()->name_site}}</title>
 
     <!-- Loading Bootstrap -->
     <link href="{{asset('website/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -47,7 +47,7 @@
             <nav class="navbar navbar-expand-lg">
 
                 <!--begin logo -->
-                <a class="navbar-brand" href="">{{App\Models\Setting::where('type','form1')->first()->name_site}}</a>
+                <a class="navbar-brand" href="">{{App\Models\Setting::where('type','1')->first()->name_site}}</a>
                 <!--end logo -->
 
 
@@ -77,13 +77,14 @@
 
 
                 <p>
-                    {{App\Models\Setting::where('type','form1')->first()->notes ?? null}}
+                    {{App\Models\Setting::where('type','1')->first()->notes ?? null}}
 
 
                 </p>
 
                 <!--begin register-form-wrapper-->
-                <div class="register-form-wrapper wow bounceIn" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: bounceIn;">
+                <div class="register-form-wrapper wow bounceIn" data-wow-delay="0.5s"
+                     style="visibility: visible; animation-delay: 0.5s; animation-name: bounceIn;">
 
                     <!--begin form-->
                     <div>
@@ -93,13 +94,14 @@
                         <!--end success message -->
 
                         <!--begin register form -->
-                        <form  class="register-form register" action="{{route('registers.store')}}" method="post">
+                        <form class="register-form register" action="{{route('registers.store')}}" method="post">
                             @csrf
 
-                            <input type="hidden" value="fdfgdfgdfgdfgdf" name="pagesTypes">
-                            <input type="hidden" value="fdfgdfgdfgdfgdf" name="pagesTypes">
+                            <input type="hidden" value="ahmedhamada" name="pagesTypes">
 
-                            <input class="register-input white-input" required  name="name" placeholder="الاسم*" type="text">
+
+                            <input class="register-input white-input" required name="name" placeholder="الاسم*"
+                                   type="text">
                             <select class="register-input white-input" required="" name="code">
 
                                 <option value="" disabled selected>اختر كود دولتك*</option>
@@ -114,16 +116,17 @@
                                 <option value="974">قطر 974</option>
                                 <option value="967">اليمن 967</option>
                                 <option value="212">المغرب 212</option>
-                                <option value="968">سلطنة عمان  968</option>
+                                <option value="968">سلطنة عمان 968</option>
                                 <option value="973">مملكة البحرين 973</option>
                                 <option value="216">الجمهورية التونسية 216</option>
                                 <option value="963">الجمهورية العربية السورية 963</option>
-                                <option value="961">الجمهورية اللبنانية  961</option>
+                                <option value="961">الجمهورية اللبنانية 961</option>
                                 <option value="000">غير ذلك يرجي كتابة كود الدولة قبل رقم التليفون</option>
 
                             </select>
 
-                            <input class="register-input white-input" required name="phone" placeholder="رقم الهاتف*" type="text">
+                            <input class="register-input white-input" required name="phone" placeholder="رقم الهاتف*"
+                                   type="text">
 
                             <select class="register-input white-input" required name="type">
 
@@ -136,15 +139,17 @@
                             </select>
 
 
-                            <input class="register-input white-input" required name="sloppy" placeholder="المؤهل الدراسى الحاصل عليه" type="text">
-                            <input class="register-input white-input" required name="jops" placeholder="الوظيفة" type="text">
+                            <input class="register-input white-input" required name="sloppy"
+                                   placeholder="المؤهل الدراسى الحاصل عليه" type="text">
+                            <input class="register-input white-input" required name="jops" placeholder="الوظيفة"
+                                   type="text">
 
-                            <input class="register-input white-input" required name="email" placeholder="البريد الإلكترونى*" type="email">
+                            <input class="register-input white-input" required name="email"
+                                   placeholder="البريد الإلكترونى*" type="email">
                             <input value="أحصل على أستشارتك مجاناً" class="register-submit" type="submit">
 
                         </form>
                         <!--end register form -->
-
 
 
                     </div>
@@ -208,7 +213,6 @@
 <!--end home section -->
 
 
-
 <!--begin section-grey -->
 <section class="section-grey section-top-border">
 
@@ -221,88 +225,60 @@
             <!--begin col-md-6 -->
             <div class="col-md-6 margin-top-20">
 
-                <h3>كن خبيراً فى مجال التحكيم الدولى وتواصل معنا لمعرفة لمزيد من التفاصيل</h3>
+                <h3>{{App\Models\Setting::where('type','1')->first()->titleSections2}}</h3>
 
                 <p class="margin-bottom-40">
 
 
                 </p>
 
-                <div class="nav flex-column nav-pills margin-right-25" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <div class="nav flex-column nav-pills margin-right-25" id="v-pills-tab" role="tablist"
+                     aria-orientation="vertical">
 
-                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                    @foreach(App\Models\SectionTwo::where('page_id','1')->get() as $row)
+                        <a class="nav-link {{$loop->first ? 'active' : null}}" id="v-pills-home-tab_{{$row->id}}"
+                           data-toggle="pill" href="#v-pills-home_id_{{$row->id}}" role="tab"
+                           aria-controls="v-pills-home_{{$row->id}}}" aria-selected="true">
 
-                        <!--begin features-second -->
-                        <div class="features-second">
+                            <!--begin features-second -->
+                            <div class="features-second">
 
-                            <div class="dropcaps-circle">
-                                <i class="fas fa-chart-line"></i>
+
+                                @if($loop->first)
+
+
+                                    <div class="dropcaps-circle">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+
+
+
+                                @elseif($loop->even)
+
+                                    <div class="dropcaps-circle">
+                                        <i class="fas fa-rocket"></i>
+                                    </div>
+
+                                @else
+
+                                    <div class="dropcaps-circle">
+                                        <i class="fas fa-network-wired"></i>
+                                    </div>
+
+                                @endif
+                                <div>
+
+                                    <h4 class="margin-bottom-5">{{$row->title}} </h4>
+
+                                    <p>
+                                        {{$row->notes}}
+                                    </p>
+                                </div>
                             </div>
-                            <div>
 
-                                <h4 class="margin-bottom-5">مدة الدراسة </h4>
-
-                                <p>مدة الدراسة 60 ساعة معتمدة بنظام التعليم عن بُعد بإستخدام أحدث وأفضل الطرق التفاعلية لتحقيق أعلى فائدة للمتدربين</p>
-                            </div>
-                        </div>
-
-                        <!--end features-second-->
-                    </a>
-
-                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
-
-                        <!--begin features-second-->
-                        <div class="features-second">
-
-                            <div class="dropcaps-circle">
-                                <i class="fas fa-network-wired"></i>
-                            </div>
-                            <div>
-
-                                <h4 class="margin-bottom-5">الاستفاده من برنامج التحكيم الدولي</h4>
-
-                                <p>فض وتسوية النزاعات بين الأفراد و الشركات و تعزيز السيرة الذاتية كما تؤهلك مجالات عمل و تحكيم دولى، وايضا الحصول على كارنية من لجنة حقوق الإنسان بغرفة التحكيم بالنقابة العامة للمُحامين و كارنية عضوية الهيئة الدولية للتحكيم.</p>
-                            </div>
-                        </div>
-                        <!--end features-second-->
-
-                    </a>
-
-                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">
-
-                        <!--begin features-second-->
-                        <div class="features-second">
-
-                            <div class="dropcaps-circle">
-                                <i class="fas fa-rocket"></i>
-                            </div>
-                            <div>
-
-                                <h4 class="margin-bottom-5">شروط الألتحاق بالبرنامج التدريبى</h4>
-
-                                <p>
-
-                                <ul>
-
-                                    <li>
-                                        الحصول على مؤهل عالى أو فوق متوسط.
-                                    </li>
-                                    <li>
-                                        أن یكون المتقدم للبرنامج حسـن السـمعة.
-                                    </li>
-                                    <li>
-                                        متمتع بكامل الاهلیة وأن لا یكون قد صدر ضده حكم بعقوبة جنائية.
-                                    </li>
-                                    <li>
-                                        أن یكون لدیه القدرة على الحكم وحسن تقدیر الأمور
-                                    </li>
-                                </ul>
-                                </p>
-                            </div>
-                        </div>
-                        <!--end features-second-->
-
-                    </a>
+                            <!--end features-second-->
+                        </a>
+                    @endforeach
 
                 </div>
 
@@ -314,17 +290,16 @@
 
                 <div class="tab-content margin-left-20" id="v-pills-tabContent">
 
-                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                        <img src="{{asset('website/images/iphone-1a.png')}}" class="width-100" alt="pic">
-                    </div>
+                    @foreach(App\Models\SectionTwo::where('page_id','1')->get() as $row)
+                        <div class="tab-pane fade {{$loop->first ? ' show' : null}} {{$loop->first ? ' active' : null}}"
+                             id="v-pills-home_id_{{$row->id}}" role="tabpanel"
+                             aria-labelledby="v-pills-home-tab_{{$row->id}}">
+                            <img src="{{asset('admin/assets/section2/'.$row->cover_photo)}}" class="width-100"
+                                 alt="pic">
 
-                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                        <img src="{{asset('website/images/iphone-1b.png')}}" class="width-100" alt="pic">
-                    </div>
+                        </div>
+                    @endforeach
 
-                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                        <img src="{{asset('website/images/iphone-1c.png')}}" class="width-100" alt="pic">
-                    </div>
 
                 </div>
 
@@ -339,7 +314,6 @@
 
 </section>
 <!--end section-grey -->
-
 
 
 <!--begin footer -->
@@ -422,7 +396,7 @@
             <!--begin col-md-12 -->
             <div class="col-md-12 footer-bottom text-center">
 
-                <p>Copyright © {{date('Y')}}  <a href="https://faroukgroup.com/ar" target="_blank">Farouk Group</a></p>
+                <p>Copyright © {{date('Y')}} <a href="https://faroukgroup.com/ar" target="_blank">Farouk Group</a></p>
 
             </div>
             <!--end col-md-6 -->

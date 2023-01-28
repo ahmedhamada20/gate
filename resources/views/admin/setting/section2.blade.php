@@ -18,17 +18,17 @@
                                 <form action="{{route('section2.store')}}" method="post" autocomplete="off"
                                     enctype="multipart/form-data">
                                     @csrf
-
+                                    <input type="hidden" name="page_id" value="{{$id}}">
 
                                     <div class="row">
                                         <div class="col">
                                             <label>الاسم بالعربي</label>
                                             <input type="text" name="title" class="form-control" required>
                                         </div>
-                                        <div class="col">
-                                            <label>الاسم بالانجلزي</label>
-                                            <input type="text" name="title_en" class="form-control" required>
-                                        </div>
+{{--                                        <div class="col">--}}
+{{--                                            <label>الاسم بالانجلزي</label>--}}
+{{--                                            <input type="text" name="title_en" class="form-control" required>--}}
+{{--                                        </div>--}}
                                     </div>
 
                                     <br>
@@ -39,10 +39,10 @@
                                            <textarea class="form-control" rows="5" name="notes"></textarea>
                                         </div>
 
-                                        <div class="col">
-                                            <label>الوصف بالانجلزي</label>
-                                           <textarea class="form-control" rows="5" name="notes_en"></textarea>
-                                        </div>
+{{--                                        <div class="col">--}}
+{{--                                            <label>الوصف بالانجلزي</label>--}}
+{{--                                           <textarea class="form-control" rows="5" name="notes_en"></textarea>--}}
+{{--                                        </div>--}}
                                     </div>
 
 
@@ -79,7 +79,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($sectionstwo as $row)
+                            @foreach(App\Models\SectionTwo::where('page_id',$id)->get() as $row)
                             <tr>
                                 <td>{{$loop->index + 1}}</td>
 
@@ -121,11 +121,11 @@
                                                             <input type="text" name="title" class="form-control"
                                                                    value="{{$row->getTranslation('title','ar')}}">
                                                         </div>
-                                                        <div class="col">
-                                                            <label>الاسم بالانجلزي</label>
-                                                            <input type="text" name="title_en" class="form-control"
-                                                                   value="{{$row->getTranslation('title','en')}}">
-                                                        </div>
+{{--                                                        <div class="col">--}}
+{{--                                                            <label>الاسم بالانجلزي</label>--}}
+{{--                                                            <input type="text" name="title_en" class="form-control"--}}
+{{--                                                                   value="{{$row->getTranslation('title','en')}}">--}}
+{{--                                                        </div>--}}
                                                     </div>
 
                                                     <br>
@@ -137,12 +137,12 @@
                                                             {{ $row->getTranslation('notes','ar') }}
                                                         </textarea>
                                                     </div>
-                                                    <div class="col">
-                                                        <label>الوصف بالانجلزي</label>
-                                                        <textarea class="form-control" name="notes_en" rows="5">
-                                                            {{ $row->getTranslation('notes','en') }}
-                                                        </textarea>
-                                                    </div>
+{{--                                                    <div class="col">--}}
+{{--                                                        <label>الوصف بالانجلزي</label>--}}
+{{--                                                        <textarea class="form-control" name="notes_en" rows="5">--}}
+{{--                                                            {{ $row->getTranslation('notes','en') }}--}}
+{{--                                                        </textarea>--}}
+{{--                                                    </div>--}}
                                                    </div>
 
 
